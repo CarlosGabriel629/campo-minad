@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campo Minado Neo-Dark</title>
+
+    <!-- Fontes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos Customizados -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="game-card">
+    <!-- Cabeçalho de Controles -->
+    <header class="game-header">
+        <h1 class="title">CAMPO MINADO</h1>
+
+        <!-- Seletor de Dificuldade -->
+        <div class="difficulty-selector">
+            <button class="btn-diff active" data-level="easy">Fácil</button>
+            <button class="btn-diff" data-level="medium">Médio</button>
+            <button class="btn-diff" data-level="hard">Difícil</button>
+        </div>
+    </header>
+
+    <!-- Display de Status -->
+    <div class="status-panel">
+        <!-- Contador de Minas -->
+        <div class="digital-display" id="mines-counter">
+            <span class="label">MINAS</span>
+            <span class="value" id="mines-val">010</span>
+        </div>
+
+        <!-- Botão de Reset (Rosto Emoji) -->
+        <button class="reset-btn" id="reset-btn" title="Reiniciar Jogo">
+            <span id="face-emoji">🙂</span>
+        </button>
+
+        <!-- Temporizador -->
+        <div class="digital-display" id="timer-display">
+            <span class="label">TEMPO</span>
+            <span class="value" id="timer-val">000</span>
+        </div>
+    </div>
+
+    <!-- Tabuleiro de Células -->
+    <div class="board-container">
+        <div id="board" class="board"></div>
+    </div>
+</div>
+
+<!-- Modal de Fim de Jogo (Vitória / Derrota) -->
+<div class="modal-overlay" id="modal">
+    <div class="modal-content">
+        <div class="modal-icon" id="modal-icon">🏆</div>
+        <h2 class="modal-title" id="modal-title">Você Venceu!</h2>
+        <p class="modal-text" id="modal-text">Tempo final: 45 segundos.</p>
+        <button class="btn-primary" id="modal-btn">Jogar Novamente</button>
+    </div>
+</div>
+
+<!-- Script Principal -->
+<script src="script.js"></script>
+</body>
+</html>
